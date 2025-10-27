@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="pushme">눌러보세요</button>
+		<div id="myt">기본 텍스트</div>
+		<script>
+			const myButton = document.getElementById('pushme');
+			const myText = document.getElementById('myt');
+			var val = 0;
+
+			myButton.addEventListener('click', function(event) {
+				myText.textContent = val;
+				val += 1;
+			});
+		</script>
+	</body>
+</html>

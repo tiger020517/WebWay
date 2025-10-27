@@ -1,0 +1,264 @@
+.page {
+  padding: 30px;
+  color: #4b6043;
+}
+
+.actions {
+  margin-bottom: 20px;
+  width: 100%; 
+  max-width: 100%;
+  
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center;
+}
+
+.actions button {
+  background: #4b6043;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-right: 8px;
+}
+
+.actions button:hover {
+  background: #3a4f37;
+}
+
+.actions select {
+  /* 💡 핵심 수정: 너비를 고정하여 변화를 막습니다. */
+  width: 140px; /* 원하는 너비로 고정 (예: 140px) */
+  max-width: 100%; /* 부모 너비를 넘지 않도록 */
+  /* ... (기존 스타일 유지) ... */
+  
+  /* 기존 인라인 스타일을 CSS 파일로 가져와 통일성을 높입니다. */
+  margin-left: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fafaf7;
+  color: #4b6043;
+}
+
+/* 카드 그리드 */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+  width:100%;
+}
+
+/* 개별 카드 */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e0e0d8;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(75, 96, 67, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(75, 96, 67, 0.15);
+}
+
+/* 이미지 */
+.project-thumb img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #f5f6f1;
+}
+
+/* 텍스트 */
+.project-info {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.project-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4b6043;
+  margin-bottom: 8px;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.project-meta .state {
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.state.progress {
+  background: #e8f0e5;
+  color: #4b6043;
+}
+
+.state.done {
+  background: #e0e0d8;
+  color: #777;
+}
+
+.project-meta .tech {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* 버튼 */
+.project-buttons {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #f0f0e8;
+  padding: 10px 12px;
+  background: #fafaf7;
+}
+
+.project-buttons button {
+  border: none;
+  background: #f5f6f1;
+  color: #4b6043;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.project-buttons button:hover {
+  background: #e7e8e0;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #f8f8f5;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-thumb {
+  width: 100%;
+  height: 240px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 8px 4px;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* 검색창 */
+.search-input {
+  flex-shrink: 0;
+  margin-left: 10px;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafaf7;
+  color: #4b6043;
+  min-width: 220px;
+  width: 100%;
+  max-width: 280px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4b6043;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(75, 96, 67, 0.25);
+}
+
+/* === 반응형 === */
+@media (max-width: 1024px) {
+  .actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .actions button,
+  .actions select,
+  .search-input {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions button,
+  .actions select,
+  .search-input {
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 8px;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+  }
+
+  .project-meta {
+    font-size: 0.85rem;
+  }
+}
