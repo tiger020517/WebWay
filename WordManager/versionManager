@@ -1,0 +1,14 @@
+251031 10:30 / clear all
+251031 10:52 / scaffold and skeleton
+251031 16:45 / implement classes and interface
+251101 06:33 / add create feature
+251101 06:41 / add update feature
+251101 06:45 / add delete feature
+251101 06:50 / fix data model (word, meaning, level) -> (id, word, meaning, level)
+251101 06:45 / add list feature
+251101 07:03 / add Level list feature
+251101 07:10 / add Search feature
+251101 07:32 / add File IO feature
+251101 07:38 / fix nextInt problem
+251101 07:43 / fix change delete message depends on it works or not
+251101 07:38 / fix nextInt problem
