@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Donor">
+
+    <insert id="insertDonor">
+        INSERT INTO donors (name, age, contact, height, weight, blood_type, smoker, organ, health, photo)
+        VALUES (#{name}, #{age}, #{contact}, #{height}, #{weight}, #{blood_type}, #{smoker}, #{organ}, #{health}, #{photo})
+    </insert>
+
+    <update id="updateDonor">
+        UPDATE donors
+        SET name=#{name}, age=#{age}, contact=#{contact}, height=#{height}, weight=#{weight},
+            blood_type=#{blood_type}, smoker=#{smoker}, organ=#{organ}, health=#{health}, photo=#{photo}
+        WHERE sid=#{sid}
+    </update>
+
+    <delete id="deleteDonor">
+        DELETE FROM donors WHERE sid=#{sid}
+    </delete>
+
+    <select id="getDonor" resultType="donor">
+        SELECT * FROM donors WHERE sid=#{sid}
+    </select>
+
+    <select id="getDonorList" resultType="donor">
+        SELECT * FROM donors ORDER BY sid DESC
+    </select>
+
+</mapper>
